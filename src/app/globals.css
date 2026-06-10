@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #0d9488; /* Teal 600 */
+  --primary-hover: #0f766e; /* Teal 700 */
+  --secondary: #0ea5e9; /* Sky 500 */
+  --accent: #10b981; /* Emerald 500 */
+  --muted: #64748b; /* Slate 500 */
+  --border: #e2e8f0; /* Slate 200 */
+  --card-bg: rgba(255, 255, 255, 0.85);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+
+  --font-sans: 'Outfit', 'Inter', var(--font-geist-sans), sans-serif;
+}
+
+.dark {
+  --background: #0f172a; /* Slate 900 */
+  --foreground: #f8fafc; /* Slate 50 */
+  --primary: #14b8a6; /* Teal 500 */
+  --primary-hover: #2dd4bf; /* Teal 400 */
+  --secondary: #38bdf8; /* Sky 400 */
+  --accent: #34d399; /* Emerald 400 */
+  --muted: #94a3b8; /* Slate 400 */
+  --border: #334155; /* Slate 700 */
+  --card-bg: rgba(15, 23, 42, 0.7);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}

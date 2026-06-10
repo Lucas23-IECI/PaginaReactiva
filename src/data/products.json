@@ -1,0 +1,932 @@
+[
+  {
+    "sku": "1011",
+    "name": "ADAPTADOR LUER x 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1011-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1035",
+    "name": "AGUJAS 18GX1 1/2 X100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1035-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1604",
+    "name": "AGUJAS 21GX 1 X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1604-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1036",
+    "name": "AGUJAS 23GX1 X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1036-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1651",
+    "name": "ALGODÓN HIDROFILO",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1651-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1056",
+    "name": "ALGODÓN HIDROFOBO CARDE",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1056B.jpg",
+    "available": true
+  },
+  {
+    "sku": "1545",
+    "name": "CLORURO DE SODIO 0.9% 100 ML. (SUERO FISIOLOGICO)",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1545-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1430",
+    "name": "CLORURO DE SODIO 0.9% 500 ML. (SUERO FISIOLOGICO)",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1430-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1768",
+    "name": "GLUCOFRECH LIMON X 250 ML.",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1768-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1769",
+    "name": "GLUCOFRECH NARANJA X 250 ML.",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1769-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2246",
+    "name": "GUANTE QUIRUGICO LATEX LIBRE DE POLVO T.6.5 X 50 PARES",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2246-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2245",
+    "name": "GUANTE QUIRUGICO LATEX LIBRE DE POLVO T.7.0 X 50 PARES",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2245-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1267",
+    "name": "JERINGAS NIPRO LUER LOCK 21GX1-1/2  5 ML.",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1267-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1268",
+    "name": "JERINGAS NIPRO LUER LOCK 21GX1-1/2 10 ML.",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1268-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1266",
+    "name": "JERINGAS NIPRO LUER LOCK 23GX1-1/2  3 ML.",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1266-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2247",
+    "name": "LIGADURA LIBRE DE LATEX",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2247-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1292",
+    "name": "MARIPOSAS 21G X 3/4",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1292-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1293",
+    "name": "MARIPOSAS 22G X 3/4",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1293-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1294",
+    "name": "MARIPOSAS 23GX3/4",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1294-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1385",
+    "name": "RECOLECTOR ORINA PEDIATRICO 100 ML. CJ.X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1385-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1460",
+    "name": "TORULA ALGODÓN 0.5 GRS.",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1460-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1587",
+    "name": "TORULAS CARY BLAIR X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1587-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1458",
+    "name": "TORULAS VASTAGO MADERA ESTERILES X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1458-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1586",
+    "name": "TORURAS STUART X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1586-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1753",
+    "name": "TUBO CELESTE 1.8 ML. EZMEDLAB RACKX 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1753-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1757",
+    "name": "TUBO CELESTE 4.5ML VIDRIO EZMEDLAB RACK X100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1757-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2248",
+    "name": "TUBO LILA 2 ML. EZMEDLAB X 100",
+    "category": "toma-de-muestras",
+    "description": "Insumo médico de alta calidad para la categoría Toma de Muestras.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2248-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1142",
+    "name": "CUBRE OBJETO 18*18 X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1142-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1143",
+    "name": "CUBRE OBJETO 20*20 X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1143-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1144",
+    "name": "CUBRE OBJETO 22*22 X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1144-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2231",
+    "name": "CUBRE OBJETO 24*24X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2231-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1145",
+    "name": "CUBRE OBJETO 24*50 X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1145-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1996",
+    "name": "CUBREOBJETO MARCA SUPERIOR ALEMAN 18*18 X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1996-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2230",
+    "name": "CUBREOBJETO MARCA SUPERIOR ALEMAN 20*20X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2230-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1841",
+    "name": "CUBREOBJETO MARCA SUPERIOR ALEMAN 22*22X 100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1841-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2229",
+    "name": "CUBREOBJETO MARCA SUPERIOR ALEMAN 24*24X100 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2229-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2217",
+    "name": "GRADILLA MULTIPROPOSITO PARA TUBOS 15-50 ML",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2217-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2232",
+    "name": "GRADILLA PARA 40 POSIC. TUBO 16 MM.DIAMETRO",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2232-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2233",
+    "name": "GRADILLA PARA 60 POSIC. TUBO 12 MM. DIAMETRO",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2233-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1001",
+    "name": "PIPETA PASTEUR  VIDRIO 150 MM X 250 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1001-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1808",
+    "name": "PIPETA PASTEUR PLASTICA 3ML X 500 UNIDADES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1808-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2228",
+    "name": "PORTA OBJETOS CORRIENTES 7101 EDLAB",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2228-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1360",
+    "name": "PORTA OBJETOS FRANJA ESMERILADA 7105 EDLAB",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1360-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1779",
+    "name": "PUNTAS AMARILLAS SIN CORONA X 1000",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1779-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1373",
+    "name": "PUNTAS AZULES SIN CORONA X1000",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1373-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2215",
+    "name": "TUBOS CAPILARES ASAS METALICAS Y DESECHABLES",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2215-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1787",
+    "name": "TUBOS CAPILARES SIN HEPARINA (AZUL) IMPORTADO X100",
+    "category": "accesorios-proceso-de-examen",
+    "description": "Insumo médico de alta calidad para la categoría Accesorios Proceso de Examen.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1787-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1068",
+    "name": "ASO LATEX",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1068-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1331",
+    "name": "CRP LATEX X 100 TEST",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1331-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1174",
+    "name": "FACTOR REUMATOIDO",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1174-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1178",
+    "name": "FOB HEMORRAGIA OCULTA",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1178-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1356",
+    "name": "LATEX",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1356-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1392",
+    "name": "ROTADENOVIRUS X 20 DET. CERTEST",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1392-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1395",
+    "name": "RPR  X 500 TEST",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1395-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1422",
+    "name": "STREP A X 20",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1422-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1424",
+    "name": "SUERO ANTI A",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1424-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1426",
+    "name": "SUERO ANTI B",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1426-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1428",
+    "name": "SUERO COOMBS POLI VERDE 10 ML.",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1428-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1060",
+    "name": "TEST AMPHETAMINE  URINE CASSETTE X 25",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1060-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2243",
+    "name": "TEST CASSETTE ORINA MORPHINE/OPIATES X 25 UNIDADES",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2243-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1120",
+    "name": "TEST CHLAMYDIA X 25",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1120-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1126",
+    "name": "TEST COCAINE URINE CASSETTE X 25",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1126-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1925",
+    "name": "TEST H.PILORY EN HECES X 25",
+    "category": "kit-de-diagnostico",
+    "description": "Insumo médico de alta calidad para la categoría Kit de Diagnóstico.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1925-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1173",
+    "name": "ACETATO DE ETILO",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1173-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1006",
+    "name": "ACETONA",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1006-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2227",
+    "name": "ALCOHOL ABSOLUTO AL 100%",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2227-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1048",
+    "name": "ALCOHOL AL 70%",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1048-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1907",
+    "name": "ALCOHOL AL 95% WINKLER",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1907-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1052",
+    "name": "ALCOHOL ISOPROPILICO",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1052-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1054",
+    "name": "ALCOHOL METILICO (METANOL)",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1054-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1355",
+    "name": "BENEDICT",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1355-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1153",
+    "name": "DETERGENTE LIQUIDO NEUTRO 1 L. WINKLER",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1153-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1890",
+    "name": "EA 50 PAPANICOLAOU 1L.",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1890-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2219",
+    "name": "EOSINA AMARILLENTA 0.5",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2219-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1172",
+    "name": "ETER ETILICO WINKLER 1L.",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1172-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1249",
+    "name": "HEMACOLOR TINCION RAPIDA 3 X 500 ML",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1249-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1413",
+    "name": "HEMATOXILINA DE HARRIS",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1413-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2249",
+    "name": "JABON LIQUIDO CLASICC ELITE X 5LTS.",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2249-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1414",
+    "name": "MAY -GRUNWALD",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1414-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1365",
+    "name": "POTASIO HIDROXIDO AL 10% 1L. WINKLER",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1365-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1522",
+    "name": "XILOL 1L.",
+    "category": "solventes-y-reactivos-liquidos",
+    "description": "Insumo médico de alta calidad para la categoría Solventes y Reactivos Líquidos.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1522B-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2251",
+    "name": "SODIO CLORURO 1 K. WINKLER",
+    "category": "reactivos-deshidratados",
+    "description": "Insumo médico de alta calidad para la categoría Reactivos Deshidratados.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2251-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1410",
+    "name": "SODIO HIDROXIDO (LENTEJAS)1K.",
+    "category": "reactivos-deshidratados",
+    "description": "Insumo médico de alta calidad para la categoría Reactivos Deshidratados.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1410.jpg",
+    "available": true
+  },
+  {
+    "sku": "2250",
+    "name": "ZINC SULFATO 1-HID. 500 GR.",
+    "category": "reactivos-deshidratados",
+    "description": "Insumo médico de alta calidad para la categoría Reactivos Deshidratados.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2250-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1717",
+    "name": "CUBRECALZADO x 100 UNIDADES",
+    "category": "epp",
+    "description": "Insumo médico de alta calidad para la categoría EPP.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1717-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1774",
+    "name": "GORROS DESECHABLES-CLIP BLANCO",
+    "category": "epp",
+    "description": "Insumo médico de alta calidad para la categoría EPP.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1774-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1735",
+    "name": "MASCARILLA 3 PLIEGUES AZUL x 100 UNIDADES",
+    "category": "epp",
+    "description": "Insumo médico de alta calidad para la categoría EPP.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1735-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "2222",
+    "name": "PECHERA BLANCA SIN MAGA",
+    "category": "epp",
+    "description": "Insumo médico de alta calidad para la categoría EPP.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-2222-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1334",
+    "name": "PECHERA CELESTE CON MANGA Y PUÑO",
+    "category": "epp",
+    "description": "Insumo médico de alta calidad para la categoría EPP.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1334-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1724",
+    "name": "PECHERA CON MANGA Y OJAL",
+    "category": "epp",
+    "description": "Insumo médico de alta calidad para la categoría EPP.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1724-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1456",
+    "name": "PAPEL INTERFOLIADO",
+    "category": "papeleria",
+    "description": "Insumo médico de alta calidad para la categoría Papelería.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1456-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1858",
+    "name": "ROLLO PAPEL MANO P/DISPENSADOR",
+    "category": "papeleria",
+    "description": "Insumo médico de alta calidad para la categoría Papelería.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1858-1.jpg",
+    "available": true
+  },
+  {
+    "sku": "1398",
+    "name": "SABANILLA",
+    "category": "papeleria",
+    "description": "Insumo médico de alta calidad para la categoría Papelería.",
+    "priceUnit": null,
+    "priceBox": null,
+    "imageUrl": "https://reactiva.cl/wp-content/uploads/2026/01/SKU-1398-1.jpg",
+    "available": true
+  }
+]
