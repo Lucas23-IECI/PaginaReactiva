@@ -1,15 +1,13 @@
 const { PrismaClient } = require('@prisma/client');
-const { PrismaBetterSqlite3 } = require('@prisma/adapter-better-sqlite3');
+const { PrismaPg } = require('@prisma/adapter-pg');
+const { Pool } = require('pg');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-// Configure better-sqlite3 adapter for Prisma v7
-// Database is created at the root folder in Prisma v7 due to prisma.config.ts resolution
-const dbPath = path.join(__dirname, '../dev.db');
-console.log(`Connecting database at path: ${dbPath}`);
-
-const adapter = new PrismaBetterSqlite3({ url: `file:${dbPath}` });
+// Read from process.env.DATABASE_URL
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
