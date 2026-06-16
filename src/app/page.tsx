@@ -15,8 +15,10 @@ import {
   FileText, 
   ArrowRight, 
   Truck, 
-  Award,
-  Layers
+  PackageCheck,
+  MapPin,
+  MessageCircle,
+  Clock3
 } from 'lucide-react';
 
 async function getFeaturedProducts(): Promise<Product[]> {
@@ -90,16 +92,212 @@ const LANDING_CATEGORIES = [
   }
 ];
 
+const HERO_METRICS = [
+  { value: '23', label: 'Anios abasteciendo laboratorios' },
+  { value: '90+', label: 'SKU clinicos disponibles' },
+  { value: '24-48h', label: 'Despacho coordinado en Biobio' }
+];
+
+const HERO_TRUST_ITEMS = [
+  { icon: ShieldCheck, label: 'Control ISP' },
+  { icon: PackageCheck, label: 'Stock critico' },
+  { icon: Truck, label: 'Entrega directa' }
+];
+
 export default async function Home() {
   const featuredProducts = await getFeaturedProducts();
+  const heroProducts = featuredProducts.slice(0, 3);
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <Header />
 
       <main className="flex-grow">
+        {/* Continuity Manifesto Hero */}
+        <section className="relative min-h-[calc(100vh-88px)] overflow-hidden bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
+          <div className="absolute right-8 top-16 hidden h-40 w-40 border-[18px] border-teal-100 dark:border-teal-900/40 lg:block" />
+          <div className="absolute bottom-6 left-6 hidden text-[8rem] font-black leading-none tracking-tighter text-slate-100 dark:text-white/[0.04] sm:left-10 lg:block">
+            24H
+          </div>
+
+          <div className="relative mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center px-5 py-20 sm:px-6 lg:px-8">
+            <p className="mb-7 max-w-xl text-[11px] font-black uppercase leading-6 tracking-[0.28em] text-teal-700 dark:text-teal-300 sm:text-xs">
+              Cuando falta stock, falta continuidad.
+            </p>
+            <h1 className="max-w-6xl text-5xl font-black leading-[0.88] tracking-tight sm:text-7xl md:text-8xl lg:text-[9.2rem]">
+              Que nada detenga el diagnostico.
+            </h1>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="#catalogo" className="inline-flex h-13 items-center justify-center gap-2 bg-slate-950 px-7 text-sm font-black text-white transition hover:-translate-y-0.5 dark:bg-white dark:text-slate-950">
+                Ver stock disponible <ArrowRight size={17} />
+              </Link>
+              <a
+                href="https://wa.me/56992801300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-13 items-center justify-center gap-2 border-2 border-slate-950 px-7 text-sm font-black transition hover:-translate-y-0.5 dark:border-white"
+              >
+                <MessageCircle size={17} /> Hablar con Reactiva
+              </a>
+            </div>
+
+            <div className="mt-14 grid max-w-5xl gap-4 lg:grid-cols-3">
+              {[
+                { icon: ShieldCheck, title: 'Certificado', text: 'Insumos clinicos y reactivos con control.' },
+                { icon: Clock3, title: 'Respuesta directa', text: 'Cotizacion rapida por canal humano.' },
+                { icon: Truck, title: 'Ruta regional', text: 'Concepcion y Chiguayante sin intermediarios.' },
+              ].map(({ icon: Icon, title, text }) => (
+                <div key={title} className="border-t-4 border-slate-950 bg-white py-5 pr-6 dark:border-white dark:bg-slate-950">
+                  <Icon className="mb-5 h-7 w-7 text-teal-600 dark:text-teal-300" />
+                  <p className="text-xl font-black">{title}</p>
+                  <p className="mt-2 max-w-xs text-sm font-semibold leading-6 text-slate-600 dark:text-slate-300">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Section */}
+        <section className="hidden relative w-full overflow-hidden border-b border-slate-100 bg-white dark:border-slate-800 dark:bg-slate-950">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.06)_1px,transparent_1px)]" />
+          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-teal-50/80 to-transparent dark:from-teal-950/30" />
+
+          <div className="relative mx-auto grid min-h-[calc(100vh-112px)] max-w-7xl grid-cols-1 items-center gap-10 px-4 py-14 sm:px-6 sm:py-18 lg:grid-cols-[minmax(0,0.95fr)_minmax(430px,1.05fr)] lg:px-8 lg:py-20">
+            <div className="flex max-w-3xl flex-col items-start gap-8 text-left">
+              <div className="flex flex-wrap items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-3 py-1.5 text-teal-700 dark:border-teal-800 dark:bg-teal-950/50 dark:text-teal-300">
+                  <ShieldCheck size={14} />
+                  Distribucion clinica certificada
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin size={13} />
+                  Concepcion y Chiguayante
+                </span>
+              </div>
+
+              <div className="space-y-5">
+                <h1 className="max-w-4xl text-4xl font-black leading-[1.03] tracking-tight text-slate-950 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                  Insumos medicos y reactivos, listos para abastecer su laboratorio.
+                </h1>
+                <p className="max-w-2xl text-base font-medium leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+                  Reactiva conecta stock certificado, asesoria directa y despacho regional para que clinicas, laboratorios e instituciones mantengan continuidad operativa sin friccion.
+                </p>
+              </div>
+
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <Link
+                  href="#catalogo"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-extrabold text-white shadow-lg shadow-teal-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-xl hover:shadow-teal-900/15"
+                >
+                  Explorar catalogo
+                  <ArrowRight size={17} />
+                </Link>
+                <a
+                  href="https://wa.me/56992801300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 text-sm font-extrabold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-teal-700"
+                >
+                  <MessageCircle size={17} />
+                  Cotizar por WhatsApp
+                </a>
+              </div>
+
+              <div className="grid w-full grid-cols-3 gap-3 border-t border-slate-200 pt-6 dark:border-slate-800 sm:max-w-2xl">
+                {HERO_METRICS.map((metric) => (
+                  <div key={metric.label} className="min-w-0">
+                    <div className="text-2xl font-black tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+                      {metric.value}
+                    </div>
+                    <div className="mt-1 text-[11px] font-bold uppercase leading-4 tracking-[0.08em] text-slate-500 dark:text-slate-400">
+                      {metric.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative min-h-[420px] w-full lg:min-h-[560px]">
+              <div className="absolute inset-0 rounded-[2rem] border border-slate-200 bg-slate-50/80 shadow-2xl shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/50" />
+              <div className="absolute inset-4 rounded-[1.5rem] border border-white bg-white/80 p-4 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/70 sm:p-5">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-4 dark:border-slate-800">
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary">Mesa de abastecimiento</p>
+                    <h2 className="mt-1 text-lg font-black text-slate-950 dark:text-white">Catalogo activo</h2>
+                  </div>
+                  <div className="rounded-xl bg-teal-50 px-3 py-2 text-right dark:bg-teal-950/40">
+                    <p className="text-xl font-black leading-none text-primary">90+</p>
+                    <p className="mt-0.5 text-[9px] font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">SKU</p>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid gap-3">
+                  {heroProducts.map((product, index) => (
+                    <Link
+                      key={product.sku}
+                      href={`/?sku=${product.sku}#catalogo`}
+                      className="group grid grid-cols-[72px_1fr_auto] items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-teal-700"
+                    >
+                      <div className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+                        {product.imageUrl ? (
+                          <Image
+                            src={product.imageUrl}
+                            alt={product.name}
+                            fill
+                            sizes="72px"
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading={index === 0 ? 'eager' : 'lazy'}
+                          />
+                        ) : (
+                          <PackageCheck className="h-6 w-6 text-slate-300" />
+                        )}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="w-fit rounded-md bg-primary/10 px-2 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-primary">
+                          {product.category.replace(/-/g, ' ')}
+                        </p>
+                        <h3 className="mt-2 truncate text-sm font-extrabold text-slate-900 transition-colors group-hover:text-primary dark:text-white">
+                          {product.name}
+                        </h3>
+                        <p className="mt-1 text-xs font-semibold text-slate-500 dark:text-slate-400">SKU {product.sku}</p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-slate-300 transition-all group-hover:translate-x-1 group-hover:text-primary" />
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="mt-5 grid grid-cols-3 gap-2">
+                  {HERO_TRUST_ITEMS.map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex min-h-20 flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-900/70">
+                      <Icon className="h-5 w-5 text-primary" />
+                      <span className="text-[10px] font-extrabold uppercase leading-4 tracking-[0.08em] text-slate-600 dark:text-slate-300">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="absolute -bottom-5 left-6 right-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-900">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white">
+                    <Truck size={21} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-black text-slate-950 dark:text-white">Despacho directo y coordinado</p>
+                    <p className="mt-0.5 truncate text-xs font-medium text-slate-500 dark:text-slate-400">
+                      Respuesta comercial por WhatsApp y seguimiento del pedido.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Immersive Centered Hero Section */}
-        <section className="relative w-full py-16 sm:py-24 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden flex flex-col items-center justify-center">
+        <section className="hidden relative w-full py-16 sm:py-24 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden flex-col items-center justify-center">
           {/* Blueprint Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(13,148,136,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(13,148,136,0.05)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
@@ -366,9 +564,11 @@ export default async function Home() {
                   <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-950/60 border border-slate-100/80 dark:border-slate-800/40 flex items-center justify-center p-0 shrink-0">
                     {p.imageUrl ? (
                       <>
-                        <img
+                        <Image
                           src={p.imageUrl}
                           alt={p.name}
+                          fill
+                          sizes="56px"
                           className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
@@ -398,7 +598,7 @@ export default async function Home() {
           <div className="max-w-7xl mx-auto flex flex-col gap-8">
             <div className="text-center flex flex-col gap-2 max-w-2xl mx-auto">
               <div className="border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-550 dark:text-slate-400 mx-auto w-fit bg-white dark:bg-slate-900/50 shadow-2xs mb-2">
-                <span className="text-primary font-extrabold mr-1">//</span> Categorías de Productos
+                <span className="text-primary font-extrabold mr-1">{'//'}</span> Categorías de Productos
               </div>
               <h2 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white font-sans">
                 Especialidades de Abastecimiento
@@ -429,7 +629,7 @@ export default async function Home() {
                     
                     {/* Text info */}
                     <div className="flex flex-col gap-0.5 text-left min-w-0">
-                      <span className="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest font-mono">{displayIndex} //</span>
+                      <span className="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest font-mono">{displayIndex} {'//'}</span>
                       <span className="text-xs font-extrabold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors truncate">
                         {cat.name}
                       </span>
@@ -453,7 +653,7 @@ export default async function Home() {
             {/* Left Column: Editorial Statement */}
             <div className="lg:col-span-5 flex flex-col gap-6 text-left">
               <div className="border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-550 dark:text-slate-400 w-fit bg-white dark:bg-slate-900/50 shadow-2xs">
-                <span className="text-primary font-extrabold mr-1">//</span> Filosofía de Trabajo
+                <span className="text-primary font-extrabold mr-1">{'//'}</span> Filosofía de Trabajo
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white font-sans leading-tight">
                 Compromiso Absoluto con la <span className="text-primary bg-primary/5 px-2 py-0.5 rounded-lg border border-primary/10">Continuidad Clínica</span>
