@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Search, X, ArrowRight, Check, Box, Layers, ShieldCheck } from 'lucide-react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Search, X, ArrowRight, Check, Box, Layers, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Product } from '@/types';
 
@@ -16,13 +17,40 @@ const CATEGORIES = [
   { slug: 'papeleria', name: 'Papelería Clínica' }
 ];
 
-export default function CatalogWrapper() {
+function CatalogInner() {
+  const searchParams = useSearchParams();
+  const catParam = searchParams.get('cat');
+  const skuParam = searchParams.get('sku');
+
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [quoteFormat, setQuoteFormat] = useState<'unit' | 'box' | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 12; // 4 columns * 3 rows
+
+  // Sync category state with query param if it changes
+  useEffect(() => {
+    if (catParam) {
+      const isValid = CATEGORIES.some(c => c.slug === catParam);
+      if (isValid) {
+        setSelectedCategory(catParam);
+        setCurrentPage(1);
+      }
+    }
+  }, [catParam]);
+
+  // Sync selected product with 'sku' query param on mount/load
+  useEffect(() => {
+    if (skuParam && products.length > 0) {
+      const found = products.find(p => p.sku === skuParam);
+      if (found) {
+        handleOpenProduct(found);
+      }
+    }
+  }, [skuParam, products]);
 
   useEffect(() => {
     async function loadProducts() {
@@ -49,6 +77,11 @@ export default function CatalogWrapper() {
       p.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = currentPage * ITEMS_PER_PAGE;
+  const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
   const handleOpenProduct = (product: Product) => {
     setSelectedProduct(product);
@@ -96,7 +129,10 @@ export default function CatalogWrapper() {
           {CATEGORIES.map((cat) => (
             <button
               key={cat.slug}
-              onClick={() => setSelectedCategory(cat.slug)}
+              onClick={() => {
+                setSelectedCategory(cat.slug);
+                setCurrentPage(1);
+              }}
               className={`px-4 py-2 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 cursor-pointer ${
                 selectedCategory === cat.slug
                   ? 'bg-primary text-white shadow-xs'
@@ -114,13 +150,19 @@ export default function CatalogWrapper() {
             type="text"
             placeholder="Buscar por nombre, SKU..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1);
+            }}
             className="w-full pl-10 pr-10 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 dark:text-white transition-all duration-200"
           />
           <Search size={16} className="absolute left-3.5 top-3.5 text-muted" />
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery('')}
+              onClick={() => {
+                setSearchQuery('');
+                setCurrentPage(1);
+              }}
               className="absolute right-3 top-3 text-muted hover:text-slate-800 dark:hover:text-white p-0.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
               <X size={14} />
@@ -131,10 +173,16 @@ export default function CatalogWrapper() {
 
       {/* Grid Status / Count */}
       <div className="flex justify-between items-center text-xs font-medium text-muted">
-        <span>Mostrando {filteredProducts.length} de {products.length} productos</span>
+        <span>
+          Mostrando {filteredProducts.length > 0 ? startIndex + 1 : 0}-
+          {Math.min(endIndex, filteredProducts.length)} de {filteredProducts.length} productos
+        </span>
         {selectedCategory !== 'all' && (
           <button 
-            onClick={() => setSelectedCategory('all')}
+            onClick={() => {
+              setSelectedCategory('all');
+              setCurrentPage(1);
+            }}
             className="text-primary hover:underline flex items-center gap-1 cursor-pointer"
           >
             Ver todos
@@ -149,66 +197,132 @@ export default function CatalogWrapper() {
           <span className="text-sm font-semibold text-muted">Cargando catálogo...</span>
         </div>
       ) : filteredProducts.length === 0 ? (
-        <div className="w-full py-20 bg-slate-50 dark:bg-slate-850/10 rounded-2xl border border-dashed border-border/80 flex flex-col justify-center items-center text-center p-6">
+        <div className="w-full py-20 bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-dashed border-border/80 flex flex-col justify-center items-center text-center p-6">
           <p className="text-base font-bold text-slate-800 dark:text-slate-200">No se encontraron productos</p>
           <p className="text-xs text-muted max-w-xs mt-1">Pruebe escribiendo otro término de búsqueda o cambiando la categoría seleccionada.</p>
           <button
-            onClick={() => { setSearchQuery(''); setSelectedCategory('all'); }}
+            onClick={() => {
+              setSearchQuery('');
+              setSelectedCategory('all');
+              setCurrentPage(1);
+            }}
             className="mt-4 px-4 py-2 text-xs font-semibold bg-primary text-white rounded-xl hover:bg-primary-hover shadow-xs transition-all duration-300 cursor-pointer"
           >
             Limpiar filtros
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredProducts.map((p) => (
-            <div
-              key={p.sku}
-              onClick={() => handleOpenProduct(p)}
-              className="group flex flex-col bg-white dark:bg-slate-850 border border-slate-100 dark:border-slate-800/80 hover:border-primary/45 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer relative"
-            >
-              {/* Product Image Container */}
-              <div className="relative aspect-square w-full bg-slate-50/50 dark:bg-slate-900/40 overflow-hidden flex items-center justify-center p-4">
-                {p.imageUrl ? (
-                  <img
-                    src={p.imageUrl}
-                    alt={p.name}
-                    className="object-contain w-full h-full transform group-hover:scale-102 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="text-xs text-muted">Sin imagen</div>
-                )}
-              </div>
-
-              {/* Product Info */}
-              <div className="p-4 flex flex-col flex-grow gap-2">
-                <div className="flex justify-between items-start gap-2">
-                  <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md uppercase tracking-wider">
-                    {p.category.replace(/-/g, ' ')}
-                  </span>
-                  <span className="text-[10px] font-semibold text-muted tracking-wide shrink-0">
-                    SKU: {p.sku}
-                  </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <AnimatePresence mode="popLayout">
+            {paginatedProducts.map((p) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                key={p.sku}
+                onClick={() => handleOpenProduct(p)}
+                className="group flex flex-col p-3 bg-white dark:bg-slate-950/70 border border-slate-200/60 dark:border-slate-800/80 hover:border-teal-500/45 dark:hover:border-teal-500/45 rounded-2xl shadow-xs hover:shadow-[0_12px_30px_rgba(20,184,166,0.06)] hover:-translate-y-1 transition-all duration-300 cursor-pointer relative"
+              >
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-950/60 border border-slate-100/80 dark:border-slate-800/40 flex items-center justify-center p-0">
+                  {p.imageUrl ? (
+                    <>
+                      <img
+                        src={p.imageUrl}
+                        alt={p.name}
+                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/[0.02] dark:bg-slate-950/15 pointer-events-none transition-colors duration-300"></div>
+                    </>
+                  ) : (
+                    <div className="text-xs text-muted">Sin imagen</div>
+                  )}
                 </div>
-                <h3 className="text-sm font-bold text-slate-800 dark:text-white line-clamp-2 leading-tight group-hover:text-primary transition-colors">
-                  {p.name}
-                </h3>
-                <p className="text-xs text-muted line-clamp-2 leading-relaxed">
-                  {p.description}
-                </p>
-
-                <div className="mt-auto pt-3 border-t border-slate-100 dark:border-slate-850 flex justify-between items-center text-xs font-semibold text-primary">
-                  <span>Solicitar precio</span>
-                  <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                <div className="pt-3.5 pb-1 px-1 flex flex-col flex-grow gap-2.5">
+                  <div className="flex justify-between items-start gap-2">
+                    <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md uppercase tracking-wider">
+                      {p.category.replace(/-/g, ' ')}
+                    </span>
+                    <span className="text-[10px] font-semibold text-muted tracking-wide shrink-0">
+                      SKU: {p.sku}
+                    </span>
+                  </div>
+                  <h3 className="text-sm font-bold text-slate-800 dark:text-white line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                    {p.name}
+                  </h3>
+                  <p className="text-xs text-muted line-clamp-2 leading-relaxed">
+                    {p.description}
+                  </p>
+                  <div className="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800/50 flex justify-between items-center text-xs font-semibold text-primary">
+                    <span>Solicitar precio</span>
+                    <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       )}
 
-      {/* Product Details Modal (Professional, Non-AI styling) */}
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-2 mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/60">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              if (currentPage > 1) {
+                setCurrentPage(currentPage - 1);
+                document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            disabled={currentPage === 1}
+            className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 text-slate-700 disabled:opacity-40 disabled:pointer-events-none transition-colors duration-200 cursor-pointer border border-slate-200/50 dark:border-slate-700/50 shadow-xs flex items-center justify-center"
+            aria-label="Página anterior"
+          >
+            <ChevronLeft size={16} />
+          </motion.button>
+          <div className="flex items-center gap-1.5">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <motion.button
+                key={page}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.92 }}
+                onClick={() => {
+                  setCurrentPage(page);
+                  document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className={`relative w-10 h-10 text-xs font-bold rounded-xl transition-all duration-200 cursor-pointer flex items-center justify-center border ${
+                  currentPage === page
+                    ? 'bg-primary text-white border-primary shadow-md shadow-primary/10'
+                    : 'bg-white hover:bg-slate-50 dark:bg-slate-850 dark:text-slate-300 dark:hover:bg-slate-700/60 text-slate-705 border-slate-200/60 dark:border-slate-800'
+                }`}
+              >
+                {page}
+              </motion.button>
+            ))}
+          </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              if (currentPage < totalPages) {
+                setCurrentPage(currentPage + 1);
+                document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            disabled={currentPage === totalPages}
+            className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 text-slate-700 disabled:opacity-40 disabled:pointer-events-none transition-colors duration-200 cursor-pointer border border-slate-200/50 dark:border-slate-700/50 shadow-xs flex items-center justify-center"
+            aria-label="Siguiente página"
+          >
+            <ChevronRight size={16} />
+          </motion.button>
+        </div>
+      )}
+
+      {/* Product Details Modal */}
       <AnimatePresence>
         {selectedProduct && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
@@ -357,5 +471,18 @@ export default function CatalogWrapper() {
       </AnimatePresence>
 
     </div>
+  );
+}
+
+export default function CatalogWrapper() {
+  return (
+    <Suspense fallback={
+      <div className="w-full max-w-7xl mx-auto px-4 py-24 flex flex-col justify-center items-center gap-4">
+        <div className="w-10 h-10 border-4 border-primary/25 border-t-primary rounded-full animate-spin"></div>
+        <span className="text-sm font-semibold text-muted">Cargando catálogo...</span>
+      </div>
+    }>
+      <CatalogInner />
+    </Suspense>
   );
 }
