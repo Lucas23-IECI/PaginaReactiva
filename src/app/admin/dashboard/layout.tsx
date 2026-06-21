@@ -24,14 +24,19 @@ export default async function AdminDashboardLayout({ children }: LayoutProps) {
         <div className="flex flex-col gap-6 p-6">
           {/* Brand Logo */}
           <div className="flex items-center gap-2">
-            <div className="relative h-8 w-28">
-              <Image
-                src="https://reactiva.cl/wp-content/uploads/2026/01/cropped-LogoReactiva-VerdeO-300x100.png"
-                alt="Reactiva Logo"
-                fill
-                priority
-                className="object-contain"
-              />
+            <div className="flex flex-col items-center">
+              <div className="relative h-7 w-24">
+                <Image
+                  src="/logo.png"
+                  alt="Reactiva Logo"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-[8px] font-bold text-primary tracking-widest uppercase mt-0.5">
+                Marco Saldías
+              </span>
             </div>
             <span className="text-[10px] font-bold text-accent bg-emerald-500/10 px-2 py-0.5 rounded-md uppercase shrink-0">
               Admin

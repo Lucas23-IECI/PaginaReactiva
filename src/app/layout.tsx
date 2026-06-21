@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   }
 };
 
+import { Providers } from "@/components/providers/Providers";
+import { CartDrawer } from "@/components/cart/CartDrawer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +37,12 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} ${outfit.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Providers>
+          {children}
+          <CartDrawer />
+        </Providers>
+      </body>
     </html>
   );
 }

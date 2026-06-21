@@ -51,16 +51,19 @@ export default function AdminLogin() {
         <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
 
         {/* Brand Logo & Title */}
-        <div className="flex flex-col items-center gap-2 relative">
-          <div className="relative h-12 w-40">
+        <div className="flex flex-col items-center gap-1 relative">
+          <div className="relative h-10 w-36">
             <Image
-              src="https://reactiva.cl/wp-content/uploads/2026/01/cropped-LogoReactiva-VerdeO-300x100.png"
+              src="/logo.png"
               alt="Reactiva Logo"
               fill
               priority
               className="object-contain"
             />
           </div>
+          <span className="text-[10px] font-bold text-primary tracking-widest uppercase">
+            Marco Saldías
+          </span>
           <span className="text-xs font-bold text-muted uppercase tracking-wider mt-2">
             Panel de Administración
           </span>

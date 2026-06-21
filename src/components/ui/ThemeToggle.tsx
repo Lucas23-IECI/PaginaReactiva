@@ -8,19 +8,22 @@ export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line
     setMounted(true);
     const storedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     // Default to light if no stored preference (per user request: "no lo quiero con este dark mode")
     if (storedTheme === 'dark') {
+      // eslint-disable-next-line
       setTheme('dark');
       document.documentElement.classList.add('dark');
     } else if (storedTheme === 'light') {
+      // eslint-disable-next-line
       setTheme('light');
       document.documentElement.classList.remove('dark');
     } else {
       // Default fallback is light
+      // eslint-disable-next-line
       setTheme('light');
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');

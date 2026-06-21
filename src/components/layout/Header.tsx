@@ -37,15 +37,19 @@ export default function Header() {
       <div className="w-full py-4 px-4 sm:px-6 md:px-8 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 flex justify-between items-center transition-all duration-300">
         <div className="flex items-center gap-3">
           {/* Logo container */}
-          <Link href="/" className="relative h-10 w-28 sm:h-12 sm:w-36 transition-transform duration-300 hover:scale-102 shrink-0">
-            <Image
-              src="https://reactiva.cl/wp-content/uploads/2026/01/cropped-LogoReactiva-VerdeO-300x100.png"
-              alt="Reactiva Logo"
-              fill
-              priority
-              sizes="(max-width: 640px) 110px, 140px"
-              className="object-contain"
-            />
+          <Link href="/" className="flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 shrink-0">
+            <div className="relative h-8 w-28 sm:h-10 sm:w-32">
+              <Image
+                src="/logo.png"
+                alt="Reactiva Logo"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+            <span className="text-[9px] sm:text-[10px] font-bold text-primary tracking-widest uppercase mt-0.5">
+              Marco Saldías
+            </span>
           </Link>
         </div>
 

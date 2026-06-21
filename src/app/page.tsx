@@ -18,29 +18,33 @@ import {
   PackageCheck,
   MapPin,
   MessageCircle,
-  Clock3
+  Clock3,
+  Award
 } from 'lucide-react';
 
 async function getFeaturedProducts(): Promise<Product[]> {
-  try {
-    const dbProducts = await db.product.findMany({
-      take: 4,
-      where: { available: true }
-    });
-    if (dbProducts && dbProducts.length > 0) {
-      return dbProducts.map(p => ({
-        sku: p.sku,
-        name: p.name,
-        category: p.category,
-        description: p.description,
-        priceUnit: p.priceUnit,
-        priceBox: p.priceBox,
-        imageUrl: p.imageUrl,
-        available: p.available
-      }));
+  // Only attempt DB if DATABASE_URL is configured
+  if (process.env.DATABASE_URL) {
+    try {
+      const dbProducts = await db.product.findMany({
+        take: 4,
+        where: { available: true }
+      });
+      if (dbProducts && dbProducts.length > 0) {
+        return dbProducts.map(p => ({
+          sku: p.sku,
+          name: p.name,
+          category: p.category,
+          description: p.description,
+          priceUnit: p.priceUnit,
+          priceBox: p.priceBox,
+          imageUrl: p.imageUrl,
+          available: p.available
+        }));
+      }
+    } catch (error) {
+      console.warn("Database not ready, using JSON fallback:", (error as Error).message);
     }
-  } catch (error) {
-    console.warn("Database not ready during build, using JSON fallback:", error);
   }
   
   // Fallback to local JSON products (first 4 products)
@@ -115,12 +119,26 @@ export default async function Home() {
       <main className="flex-grow">
         {/* Continuity Manifesto Hero */}
         <section className="relative min-h-[calc(100vh-88px)] overflow-hidden bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
-          <div className="absolute right-8 top-16 hidden h-40 w-40 border-[18px] border-teal-100 dark:border-teal-900/40 lg:block" />
-          <div className="absolute bottom-6 left-6 hidden text-[8rem] font-black leading-none tracking-tighter text-slate-100 dark:text-white/[0.04] sm:left-10 lg:block">
+          {/* Background Image & Gradient Fade Overlay */}
+          <div 
+            className="absolute inset-0 z-0" 
+            style={{
+              backgroundImage: 'url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2000&auto=format&fit=crop")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'right center',
+            }}
+          />
+          <div className="absolute inset-0 z-0 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-slate-950 dark:via-slate-950/80 dark:to-transparent" />
+          
+          {/* Optional subtle global overlay just to soften the image slightly */}
+          <div className="absolute inset-0 z-0 bg-white/20 dark:bg-slate-950/20" />
+
+          <div className="absolute right-8 top-16 hidden h-40 w-40 border-[18px] border-teal-100/40 dark:border-teal-900/20 lg:block z-0" />
+          <div className="absolute bottom-6 left-6 hidden text-[8rem] font-black leading-none tracking-tighter text-slate-900/[0.03] dark:text-white/[0.02] sm:left-10 lg:block z-0">
             24H
           </div>
 
-          <div className="relative mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center px-5 py-20 sm:px-6 lg:px-8">
+          <div className="relative z-10 mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center px-5 py-20 sm:px-6 lg:px-8">
             <p className="mb-7 max-w-xl text-[11px] font-black uppercase leading-6 tracking-[0.28em] text-teal-700 dark:text-teal-300 sm:text-xs">
               Cuando falta stock, falta continuidad.
             </p>
@@ -144,11 +162,11 @@ export default async function Home() {
 
             <div className="mt-14 grid max-w-5xl gap-4 lg:grid-cols-3">
               {[
-                { icon: ShieldCheck, title: 'Certificado', text: 'Insumos clinicos y reactivos con control.' },
+                { icon: Award, title: '23 Años de Trayectoria', text: 'Abasteciendo laboratorios e instituciones desde el 2003.' },
                 { icon: Clock3, title: 'Respuesta directa', text: 'Cotizacion rapida por canal humano.' },
                 { icon: Truck, title: 'Ruta regional', text: 'Concepcion y Chiguayante sin intermediarios.' },
               ].map(({ icon: Icon, title, text }) => (
-                <div key={title} className="border-t-4 border-slate-950 bg-white py-5 pr-6 dark:border-white dark:bg-slate-950">
+                <div key={title} className="border-t-4 border-slate-950 bg-white p-6 shadow-sm dark:border-white dark:bg-slate-950/80">
                   <Icon className="mb-5 h-7 w-7 text-teal-600 dark:text-teal-300" />
                   <p className="text-xl font-black">{title}</p>
                   <p className="mt-2 max-w-xs text-sm font-semibold leading-6 text-slate-600 dark:text-slate-300">{text}</p>
@@ -593,54 +611,6 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Categories Compact Section */}
-        <section className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950/40 border-b border-slate-100 dark:border-slate-800/60">
-          <div className="max-w-7xl mx-auto flex flex-col gap-8">
-            <div className="text-center flex flex-col gap-2 max-w-2xl mx-auto">
-              <div className="border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-550 dark:text-slate-400 mx-auto w-fit bg-white dark:bg-slate-900/50 shadow-2xs mb-2">
-                <span className="text-primary font-extrabold mr-1">{'//'}</span> Categorías de Productos
-              </div>
-              <h2 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white font-sans">
-                Especialidades de Abastecimiento
-              </h2>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Seleccione una especialidad para filtrar el catálogo a continuación de manera inmediata.
-              </p>
-            </div>
-
-            {/* Compact Slide Plates Grid */}
-            <div className="flex flex-wrap justify-center gap-4 pt-2">
-              {LANDING_CATEGORIES.map((cat, index) => {
-                const IconComponent = cat.icon;
-                const displayIndex = String(index + 1).padStart(2, '0');
-                return (
-                  <Link
-                    key={cat.slug}
-                    href={`/?cat=${cat.slug}#catalogo`}
-                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(25%-12px)] relative flex items-center gap-3.5 p-3.5 bg-white dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 hover:border-teal-500/40 dark:hover:border-teal-500/40 rounded-xl shadow-2xs hover:shadow-[0_8px_20px_rgba(20,184,166,0.04)] hover:-translate-y-0.5 transition-all duration-300 group overflow-hidden"
-                  >
-                    {/* Left accent line that slides in on hover */}
-                    <div className="absolute left-0 inset-y-0 w-1 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                    
-                    {/* Icon Container */}
-                    <div className="w-9 h-9 rounded-lg bg-teal-500/5 dark:bg-teal-500/10 border border-teal-500/10 dark:border-teal-450/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
-                      <IconComponent size={16} />
-                    </div>
-                    
-                    {/* Text info */}
-                    <div className="flex flex-col gap-0.5 text-left min-w-0">
-                      <span className="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest font-mono">{displayIndex} {'//'}</span>
-                      <span className="text-xs font-extrabold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors truncate">
-                        {cat.name}
-                      </span>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* Full Products Catalogue Embedded Section */}
         <section id="catalogo" className="w-full py-16 sm:py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800/60 scroll-mt-20">
           <CatalogWrapper />
@@ -752,8 +722,11 @@ export default async function Home() {
             <span className="text-slate-800 dark:text-white font-extrabold text-sm tracking-wide">REACTIVA</span>
             <span>Comercializadora, Insumos medicos y laboratorio</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-col items-center gap-1">
             <span>Copyright &copy; {new Date().getFullYear()} Reactiva. Todos los derechos reservados.</span>
+            <span className="text-[10px] text-slate-500">
+              Desarrollado por <a href="https://www.purocode.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">PuroCode</a>
+            </span>
           </div>
           <div className="flex gap-4">
             <a href="https://www.instagram.com/reactiva.cl/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">

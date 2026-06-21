@@ -12,6 +12,7 @@ function createPrismaClient(): PrismaClient {
   return new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any);
 }
 
